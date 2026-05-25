@@ -7,321 +7,78 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #0d1208;
-    --bg2: #131a0e;
-    --bg3: #1a2412;
-    --gold: #c9a84c;
-    --gold2: #e8c97a;
-    --gold-dim: rgba(201,168,76,0.15);
-    --text: #e8e4d8;
-    --text-muted: #8a8578;
-    --text-dim: #5a5650;
-    --border: rgba(201,168,76,0.18);
-    --border-dim: rgba(255,255,255,0.06);
+    --bg: #0d1208; --bg2: #131a0e; --bg3: #1a2412;
+    --gold: #c9a84c; --gold2: #e8c97a; --gold-dim: rgba(201,168,76,0.15);
+    --text: #e8e4d8; --text-muted: #8a8578; --text-dim: #5a5650;
+    --border: rgba(201,168,76,0.18); --border-dim: rgba(255,255,255,0.06);
   }
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
-  body {
-    background: var(--bg);
-    color: var(--text);
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 300;
-    font-size: 16px;
-    line-height: 1.7;
-    overflow-x: hidden;
-  }
+  body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; font-weight: 300; font-size: 16px; line-height: 1.7; overflow-x: hidden; }
+
   /* NAV */
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.4rem 4rem;
-    border-bottom: 1px solid var(--border-dim);
-    backdrop-filter: blur(20px);
-    background: rgba(13,18,8,0.7);
-  }
-  .nav-logo {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: var(--gold);
-    letter-spacing: 0.05em;
-    text-decoration: none;
-  }
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; justify-content: space-between; align-items: center; padding: 1.4rem 4rem; border-bottom: 1px solid var(--border-dim); backdrop-filter: blur(20px); background: rgba(13,18,8,0.7); }
+  .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; font-weight: 600; color: var(--gold); letter-spacing: 0.05em; text-decoration: none; }
   .nav-links { display: flex; gap: 2.5rem; list-style: none; }
-  .nav-links a {
-    color: var(--text-muted);
-    text-decoration: none;
-    font-size: 0.8rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    transition: color 0.3s;
-  }
+  .nav-links a { color: var(--text-muted); text-decoration: none; font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; transition: color 0.3s; }
   .nav-links a:hover { color: var(--gold); }
+
   /* HERO */
-  .hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    padding: 8rem 4rem 6rem;
-    position: relative;
-    overflow: hidden;
-  }
-  .hero::after {
-    content: '';
-    position: absolute;
-    top: -20%; right: -10%;
-    width: 600px; height: 600px;
-    background: radial-gradient(circle, rgba(201,168,76,0.07) 0%, transparent 70%);
-    pointer-events: none;
-  }
-  .hero-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5rem;
-    align-items: center;
-  }
-  .hero-eyebrow {
-    font-size: 0.75rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 1.5rem;
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-  }
-  .hero-eyebrow::before {
-    content: '';
-    display: inline-block;
-    width: 30px; height: 1px;
-    background: var(--gold);
-  }
-  .hero-name {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(3.5rem, 6vw, 5.5rem);
-    font-weight: 300;
-    line-height: 1.05;
-    margin-bottom: 0.3rem;
-  }
+  .hero { min-height: 100vh; display: flex; align-items: center; padding: 8rem 4rem 6rem; position: relative; overflow: hidden; }
+  .hero::after { content: ''; position: absolute; top: -20%; right: -10%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(201,168,76,0.07) 0%, transparent 70%); pointer-events: none; }
+  .hero-inner { max-width: 1100px; margin: 0 auto; width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+  .hero-eyebrow { font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.8rem; }
+  .hero-eyebrow::before { content: ''; display: inline-block; width: 30px; height: 1px; background: var(--gold); }
+  .hero-name { font-family: 'Cormorant Garamond', serif; font-size: clamp(3.5rem, 6vw, 5.5rem); font-weight: 300; line-height: 1.05; margin-bottom: 0.3rem; }
   .hero-name em { font-style: italic; color: var(--gold); }
-  .hero-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.3rem;
-    font-weight: 300;
-    color: var(--text-muted);
-    margin-bottom: 2rem;
-    font-style: italic;
-  }
-  .hero-desc {
-    font-size: 0.95rem;
-    color: var(--text-muted);
-    line-height: 1.9;
-    max-width: 480px;
-    margin-bottom: 2.5rem;
-  }
-  .hero-cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.7rem;
-    background: var(--gold);
-    color: var(--bg);
-    padding: 0.85rem 2rem;
-    font-size: 0.8rem;
-    font-weight: 500;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    text-decoration: none;
-    transition: all 0.3s;
-  }
+  .hero-title { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 300; color: var(--text-muted); margin-bottom: 2rem; font-style: italic; }
+  .hero-desc { font-size: 0.95rem; color: var(--text-muted); line-height: 1.9; max-width: 480px; margin-bottom: 2.5rem; }
+  .hero-btns { display: flex; flex-wrap: wrap; gap: 0.8rem; align-items: center; }
+  .hero-cta { display: inline-flex; align-items: center; gap: 0.7rem; background: var(--gold); color: var(--bg); padding: 0.85rem 2rem; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; transition: all 0.3s; }
   .hero-cta:hover { background: var(--gold2); transform: translateY(-2px); }
-  .hero-cta-ghost {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.7rem;
-    border: 1px solid var(--border);
-    color: var(--text-muted);
-    padding: 0.85rem 2rem;
-    font-size: 0.8rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    text-decoration: none;
-    margin-left: 1rem;
-    transition: all 0.3s;
-  }
+  .hero-cta-ghost { display: inline-flex; align-items: center; gap: 0.7rem; border: 1px solid var(--border); color: var(--text-muted); padding: 0.85rem 2rem; font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; text-decoration: none; transition: all 0.3s; }
   .hero-cta-ghost:hover { border-color: var(--gold); color: var(--gold); }
-  .hero-stats {
-    display: flex;
-    gap: 2.5rem;
-    margin-top: 3rem;
-    padding-top: 2rem;
-    border-top: 1px solid var(--border-dim);
-  }
-  .stat-num {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2.2rem;
-    font-weight: 600;
-    color: var(--gold);
-    display: block;
-    line-height: 1;
-  }
-  .stat-label {
-    font-size: 0.72rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--text-dim);
-    margin-top: 0.3rem;
-  }
+  .hero-stats { display: flex; gap: 2.5rem; margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-dim); }
+  .stat-num { font-family: 'Cormorant Garamond', serif; font-size: 2.2rem; font-weight: 600; color: var(--gold); display: block; line-height: 1; }
+  .stat-label { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-dim); margin-top: 0.3rem; }
   .hero-visual { position: relative; display: flex; justify-content: center; }
-  .hero-card {
-    background: var(--bg2);
-    border: 1px solid var(--border);
-    padding: 2.5rem;
-    position: relative;
-    width: 100%;
-    max-width: 400px;
-  }
-  .hero-card::before {
-    content: '';
-    position: absolute;
-    top: -1px; left: 2rem;
-    width: 60px; height: 2px;
-    background: var(--gold);
-  }
-  .hero-card-label {
-    font-size: 0.7rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 1.5rem;
-  }
-  .skill-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0.8rem 0;
-    border-bottom: 1px solid var(--border-dim);
-    font-size: 0.88rem;
-  }
+  .hero-card { background: var(--bg2); border: 1px solid var(--border); padding: 2.5rem; position: relative; width: 100%; max-width: 400px; }
+  .hero-card::before { content: ''; position: absolute; top: -1px; left: 2rem; width: 60px; height: 2px; background: var(--gold); }
+  .hero-card-label { font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
+  .skill-row { display: flex; justify-content: space-between; align-items: center; padding: 0.8rem 0; border-bottom: 1px solid var(--border-dim); font-size: 0.88rem; }
   .skill-row:last-child { border-bottom: none; }
   .skill-bar { width: 100px; height: 2px; background: var(--border-dim); position: relative; }
   .skill-bar-fill { position: absolute; left: 0; top: 0; height: 100%; background: var(--gold); }
-  .location-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-size: 0.75rem;
-    color: var(--text-muted);
-    margin-top: 1.5rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid var(--border-dim);
-  }
-  .location-dot {
-    width: 6px; height: 6px;
-    border-radius: 50%;
-    background: var(--gold);
-    animation: pulse 2s infinite;
-  }
+  .location-badge { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.75rem; color: var(--text-muted); margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border-dim); }
+  .location-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--gold); animation: pulse 2s infinite; }
   @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+
   /* SECTIONS */
   section { position: relative; z-index: 1; }
   .section-inner { max-width: 1100px; margin: 0 auto; padding: 7rem 4rem; }
-  .section-eyebrow {
-    font-size: 0.72rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 0.8rem;
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-  }
-  .section-eyebrow::before {
-    content: '';
-    display: inline-block;
-    width: 20px; height: 1px;
-    background: var(--gold);
-  }
-  .section-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2.2rem, 4vw, 3.2rem);
-    font-weight: 300;
-    line-height: 1.15;
-    margin-bottom: 1rem;
-  }
+  .section-eyebrow { font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem; }
+  .section-eyebrow::before { content: ''; display: inline-block; width: 20px; height: 1px; background: var(--gold); }
+  .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 4vw, 3.2rem); font-weight: 300; line-height: 1.15; margin-bottom: 1rem; }
   .section-title em { font-style: italic; color: var(--gold); }
+
   /* ABOUT */
   #about { background: var(--bg2); }
-  .about-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5rem;
-    align-items: start;
-    margin-top: 3.5rem;
-  }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; margin-top: 3.5rem; }
   .about-text p { font-size: 0.95rem; color: var(--text-muted); line-height: 2; margin-bottom: 1.5rem; }
-  .about-highlight {
-    border-left: 2px solid var(--gold);
-    padding-left: 1.5rem;
-    margin: 2rem 0;
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.35rem;
-    font-style: italic;
-    color: var(--text);
-    line-height: 1.6;
-  }
+  .about-highlight { border-left: 2px solid var(--gold); padding-left: 1.5rem; margin: 2rem 0; font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-style: italic; color: var(--text); line-height: 1.6; }
   .timeline { display: flex; flex-direction: column; }
-  .timeline-item {
-    display: grid;
-    grid-template-columns: 80px 1fr;
-    gap: 1.5rem;
-    padding: 1.5rem 0;
-    border-bottom: 1px solid var(--border-dim);
-  }
+  .timeline-item { display: grid; grid-template-columns: 80px 1fr; gap: 1.5rem; padding: 1.5rem 0; border-bottom: 1px solid var(--border-dim); }
   .timeline-item:last-child { border-bottom: none; }
   .timeline-year { font-family: 'Cormorant Garamond', serif; font-size: 0.85rem; color: var(--gold); padding-top: 0.2rem; font-style: italic; }
   .timeline-title { font-size: 0.92rem; font-weight: 500; color: var(--text); margin-bottom: 0.3rem; }
-  .timeline-sub { font-size: 0.8rem; color: var(--text-dim); letter-spacing: 0.05em; }
-  .timeline-badge {
-    display: inline-block;
-    margin-top: 0.4rem;
-    font-size: 0.65rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    background: var(--gold-dim);
-    color: var(--gold);
-    padding: 0.2rem 0.6rem;
-  }
+  .timeline-sub { font-size: 0.8rem; color: var(--text-dim); }
+  .timeline-badge { display: inline-block; margin-top: 0.4rem; font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; background: var(--gold-dim); color: var(--gold); padding: 0.2rem 0.6rem; }
+
   /* SKILLS */
   #skills { background: var(--bg); }
-  .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-    margin-top: 3.5rem;
-  }
-  .skill-card {
-    background: var(--bg2);
-    border: 1px solid var(--border-dim);
-    padding: 2rem;
-    transition: border-color 0.3s, transform 0.3s;
-    position: relative;
-    overflow: hidden;
-  }
-  .skill-card::after {
-    content: '';
-    position: absolute;
-    bottom: 0; left: 0;
-    width: 0; height: 1px;
-    background: var(--gold);
-    transition: width 0.4s;
-  }
+  .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3.5rem; }
+  .skill-card { background: var(--bg2); border: 1px solid var(--border-dim); padding: 2rem; transition: border-color 0.3s, transform 0.3s; position: relative; overflow: hidden; }
+  .skill-card::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1px; background: var(--gold); transition: width 0.4s; }
   .skill-card:hover { border-color: var(--border); transform: translateY(-3px); }
   .skill-card:hover::after { width: 100%; }
   .skill-card-icon { font-size: 1.5rem; margin-bottom: 1rem; color: var(--gold); }
@@ -329,35 +86,25 @@
   .skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
   .skill-tag { font-size: 0.72rem; letter-spacing: 0.05em; color: var(--text-muted); background: rgba(255,255,255,0.04); border: 1px solid var(--border-dim); padding: 0.25rem 0.7rem; }
 
-  /* ── PROJECTS ── */
-  #projects { background: var(--bg2); }
+  /* STANDARDS SECTION */
+  #standards { background: var(--bg2); }
+  .standards-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 3.5rem; }
+  .standard-card { background: var(--bg3); border: 1px solid var(--border-dim); padding: 2rem; position: relative; transition: border-color 0.3s; }
+  .standard-card:hover { border-color: var(--border); }
+  .standard-card::before { content: ''; position: absolute; top: -1px; left: 2rem; width: 40px; height: 2px; background: var(--gold); }
+  .standard-code { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 600; color: var(--gold); line-height: 1; margin-bottom: 0.6rem; }
+  .standard-name { font-size: 0.82rem; font-weight: 500; color: var(--text); margin-bottom: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; }
+  .standard-desc { font-size: 0.85rem; color: var(--text-muted); line-height: 1.8; }
+
+  /* PROJECTS */
+  #projects { background: var(--bg); }
   .projects-list { display: flex; flex-direction: column; gap: 4rem; margin-top: 3.5rem; }
-  .project-block {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3.5rem;
-    align-items: start;
-    padding-bottom: 4rem;
-    border-bottom: 1px solid var(--border-dim);
-  }
+  .project-block { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: start; padding-bottom: 4rem; border-bottom: 1px solid var(--border-dim); }
   .project-block:last-child { border-bottom: none; padding-bottom: 0; }
   .project-block.reverse { direction: rtl; }
   .project-block.reverse > * { direction: ltr; }
-  .project-num {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 0.8rem;
-    color: var(--text-dim);
-    font-style: italic;
-    margin-bottom: 0.8rem;
-  }
-  .project-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.9rem;
-    font-weight: 400;
-    color: var(--text);
-    margin-bottom: 1rem;
-    line-height: 1.25;
-  }
+  .project-num { font-family: 'Cormorant Garamond', serif; font-size: 0.8rem; color: var(--text-dim); font-style: italic; margin-bottom: 0.8rem; }
+  .project-title { font-family: 'Cormorant Garamond', serif; font-size: 1.9rem; font-weight: 400; color: var(--text); margin-bottom: 1rem; line-height: 1.25; }
   .project-desc { font-size: 0.88rem; color: var(--text-muted); line-height: 1.9; margin-bottom: 1.2rem; }
   .project-meta { display: flex; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 1.5rem; }
   .project-meta-item { font-size: 0.78rem; color: var(--text-dim); }
@@ -365,170 +112,54 @@
   .project-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.5rem; }
   .project-tag { font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); background: var(--gold-dim); padding: 0.25rem 0.8rem; }
   .project-actions { display: flex; gap: 0.8rem; flex-wrap: wrap; }
-  .btn-pdf {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    background: var(--gold);
-    color: var(--bg);
-    padding: 0.65rem 1.3rem;
-    font-size: 0.72rem;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    text-decoration: none;
-    transition: background 0.3s;
-  }
+  .btn-pdf { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--gold); color: var(--bg); padding: 0.65rem 1.3rem; font-size: 0.72rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; transition: background 0.3s; }
   .btn-pdf:hover { background: var(--gold2); }
-  .btn-ghost {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    border: 1px solid var(--border);
-    color: var(--text-muted);
-    padding: 0.65rem 1.3rem;
-    font-size: 0.72rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    text-decoration: none;
-    transition: all 0.3s;
-  }
+  .btn-ghost { display: inline-flex; align-items: center; gap: 0.5rem; border: 1px solid var(--border); color: var(--text-muted); padding: 0.65rem 1.3rem; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; transition: all 0.3s; }
   .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
-
-  /* MEDIA PANEL */
   .project-media { display: flex; flex-direction: column; gap: 1rem; }
-  .media-video {
-    position: relative;
-    width: 100%;
-    padding-bottom: 56.25%;
-    background: #000;
-    border: 1px solid var(--border-dim);
-    overflow: hidden;
-  }
-  .media-video iframe {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    border: none;
-  }
+  .media-video { position: relative; width: 100%; padding-bottom: 56.25%; background: #000; border: 1px solid var(--border-dim); overflow: hidden; }
+  .media-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: none; }
   .media-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
-  .media-grid-2 img, .media-img {
-    width: 100%;
-    display: block;
-    border: 1px solid var(--border-dim);
-    object-fit: cover;
-    aspect-ratio: 16/9;
-    transition: border-color 0.3s;
-  }
-  .media-img { aspect-ratio: 4/3; }
-  .media-grid-2 img:hover, .media-img:hover { border-color: var(--border); }
-  .media-label {
-    font-size: 0.68rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--text-dim);
-    margin-bottom: 0.6rem;
-  }
-
-  /* PDF PREVIEW CARD */
-  .pdf-preview {
-    background: var(--bg3);
-    border: 1px solid var(--border-dim);
-    padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.8rem;
-  }
-  .pdf-icon { font-size: 2rem; color: var(--gold); line-height: 1; }
-  .pdf-title { font-size: 0.9rem; font-weight: 500; color: var(--text); }
-  .pdf-sub { font-size: 0.78rem; color: var(--text-dim); }
+  .media-grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.6rem; }
+  .media-grid-2 img, .media-grid-3 img, .media-img { width: 100%; display: block; border: 1px solid var(--border-dim); object-fit: cover; aspect-ratio: 16/9; transition: border-color 0.3s, transform 0.3s; }
+  .media-grid-3 img { aspect-ratio: 1/1; }
+  .media-grid-2 img:hover, .media-grid-3 img:hover, .media-img:hover { border-color: var(--gold); transform: scale(1.02); }
+  .media-label { font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 0.6rem; }
+  .pdf-preview { background: var(--bg2); border: 1px solid var(--border-dim); padding: 1.5rem; display: flex; flex-direction: column; gap: 0.8rem; }
 
   /* CONTACT */
-  #contact { background: var(--bg); }
-  .contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5rem;
-    margin-top: 3.5rem;
-    align-items: start;
-  }
+  #contact { background: var(--bg2); }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; margin-top: 3.5rem; align-items: start; }
   .contact-intro { font-size: 0.95rem; color: var(--text-muted); line-height: 2; margin-bottom: 2rem; }
-  .contact-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 1.2rem;
-    padding: 1.2rem 0;
-    border-bottom: 1px solid var(--border-dim);
-  }
+  .contact-item { display: flex; align-items: flex-start; gap: 1.2rem; padding: 1.2rem 0; border-bottom: 1px solid var(--border-dim); }
   .contact-item:last-child { border-bottom: none; }
-  .contact-icon {
-    width: 36px; height: 36px;
-    background: var(--gold-dim);
-    border: 1px solid var(--border);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--gold);
-    font-size: 0.9rem;
-    flex-shrink: 0;
-    margin-top: 0.2rem;
-  }
+  .contact-icon { width: 36px; height: 36px; background: var(--gold-dim); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; color: var(--gold); font-size: 0.9rem; flex-shrink: 0; margin-top: 0.2rem; }
   .contact-label { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 0.2rem; }
   .contact-value { font-size: 0.92rem; color: var(--text); }
   .contact-form { display: flex; flex-direction: column; gap: 1rem; }
   .form-group { display: flex; flex-direction: column; gap: 0.4rem; }
   .form-label { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-dim); }
-  .form-input, .form-textarea {
-    background: var(--bg2);
-    border: 1px solid var(--border-dim);
-    color: var(--text);
-    padding: 0.85rem 1rem;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.88rem;
-    font-weight: 300;
-    outline: none;
-    transition: border-color 0.3s;
-    resize: none;
-    width: 100%;
-  }
+  .form-input, .form-textarea { background: var(--bg3); border: 1px solid var(--border-dim); color: var(--text); padding: 0.85rem 1rem; font-family: 'DM Sans', sans-serif; font-size: 0.88rem; font-weight: 300; outline: none; transition: border-color 0.3s; resize: none; width: 100%; }
   .form-input:focus, .form-textarea:focus { border-color: var(--border); }
   .form-textarea { height: 130px; }
-  .form-btn {
-    background: var(--gold);
-    color: var(--bg);
-    border: none;
-    padding: 0.9rem 2rem;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.78rem;
-    font-weight: 500;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: background 0.3s;
-    align-self: flex-start;
-  }
+  .form-btn { background: var(--gold); color: var(--bg); border: none; padding: 0.9rem 2rem; font-family: 'DM Sans', sans-serif; font-size: 0.78rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer; transition: background 0.3s; align-self: flex-start; }
   .form-btn:hover { background: var(--gold2); }
+
   /* FOOTER */
-  footer {
-    background: var(--bg2);
-    border-top: 1px solid var(--border-dim);
-    padding: 2.5rem 4rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+  footer { background: var(--bg2); border-top: 1px solid var(--border-dim); padding: 2.5rem 4rem; display: flex; justify-content: space-between; align-items: center; }
   .footer-name { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--gold); }
-  .footer-copy { font-size: 0.75rem; color: var(--text-dim); letter-spacing: 0.05em; }
+  .footer-copy { font-size: 0.75rem; color: var(--text-dim); }
+
   /* FADE IN */
   .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
   .fade-in.visible { opacity: 1; transform: translateY(0); }
+
   /* RESPONSIVE */
   @media (max-width: 900px) {
     nav { padding: 1.2rem 2rem; }
     .nav-links { display: none; }
     .hero { padding: 7rem 2rem 4rem; }
-    .hero-inner, .about-grid, .project-block, .contact-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .hero-inner, .about-grid, .project-block, .contact-grid, .standards-grid { grid-template-columns: 1fr; gap: 2.5rem; }
     .project-block.reverse { direction: ltr; }
     .section-inner { padding: 5rem 2rem; }
     .skills-grid { grid-template-columns: 1fr 1fr; }
@@ -537,7 +168,7 @@
   @media (max-width: 600px) {
     .skills-grid { grid-template-columns: 1fr; }
     .hero-stats { gap: 1.5rem; }
-    .media-grid-2 { grid-template-columns: 1fr; }
+    .media-grid-2, .media-grid-3 { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -549,7 +180,7 @@
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
-    <li><a href="#projects">Projects</a></li>
+    <li><a href="#standards">Standards</a></li><li><a href="#projects">Projects</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
@@ -561,64 +192,28 @@
       <div class="hero-eyebrow">Available for opportunities</div>
       <h1 class="hero-name">RA.<br><em>Athra</em></h1>
       <p class="hero-title">Quantity Surveyor &amp; CAD Designer</p>
-      <p class="hero-desc">
-        A results-driven construction professional from Sri Lanka combining technical precision
-        in cost estimation and BIM modelling with advanced skills in AutoCAD, Revit, SketchUp,
-        and Enscape 3D rendering. Seeking opportunities in the Middle East construction industry.
-      </p>
-      <div style="display:flex;flex-wrap:wrap;gap:0.8rem;align-items:center;">
+      <p class="hero-desc">A results-driven construction professional from Sri Lanka combining technical precision in cost estimation and BIM modelling with advanced skills in AutoCAD, Revit, SketchUp, Rhino, and Enscape 3D rendering. Seeking opportunities in the Middle East construction industry.</p>
+      <div class="hero-btns">
         <a href="#contact" class="hero-cta">Get in touch &rarr;</a>
         <a href="#projects" class="hero-cta-ghost">View work</a>
-        <a href="Ahamed_Athra_CV.docx" download class="hero-cta-ghost" style="display:inline-flex;align-items:center;gap:0.5rem;">
-          &#8595; Download CV
-        </a>
+        <a href="Ahamed_Athra_CV.docx" download class="hero-cta-ghost">&#8595; Download CV</a>
       </div>
       <div class="hero-stats">
-        <div>
-          <span class="stat-num">4+</span>
-          <div class="stat-label">Certifications</div>
-        </div>
-        <div>
-          <span class="stat-num">3&times;</span>
-          <div class="stat-label">Batch Topper</div>
-        </div>
-        <div>
-          <span class="stat-num">UAE</span>
-          <div class="stat-label">Career Goal</div>
-        </div>
+        <div><span class="stat-num">4+</span><div class="stat-label">Certifications</div></div>
+        <div><span class="stat-num">3&times;</span><div class="stat-label">Batch Topper</div></div>
+        <div><span class="stat-num">UAE</span><div class="stat-label">Career Goal</div></div>
       </div>
     </div>
     <div class="hero-visual fade-in" style="transition-delay:0.2s">
       <div class="hero-card">
         <div class="hero-card-label">Core Competencies</div>
-        <div class="skill-row">
-          <span>Quantity Surveying</span>
-          <div class="skill-bar"><div class="skill-bar-fill" style="width:88%"></div></div>
-        </div>
-        <div class="skill-row">
-          <span>AutoCAD 2D / 3D</span>
-          <div class="skill-bar"><div class="skill-bar-fill" style="width:92%"></div></div>
-        </div>
-        <div class="skill-row">
-          <span>Revit BIM</span>
-          <div class="skill-bar"><div class="skill-bar-fill" style="width:85%"></div></div>
-        </div>
-        <div class="skill-row">
-          <span>Enscape Rendering</span>
-          <div class="skill-bar"><div class="skill-bar-fill" style="width:82%"></div></div>
-        </div>
-        <div class="skill-row">
-          <span>SketchUp</span>
-          <div class="skill-bar"><div class="skill-bar-fill" style="width:80%"></div></div>
-        </div>
-        <div class="skill-row">
-          <span>Cost Estimation</span>
-          <div class="skill-bar"><div class="skill-bar-fill" style="width:85%"></div></div>
-        </div>
-        <div class="location-badge">
-          <div class="location-dot"></div>
-          Ampara, Sri Lanka &mdash; Open to relocation
-        </div>
+        <div class="skill-row"><span>Quantity Surveying</span><div class="skill-bar"><div class="skill-bar-fill" style="width:88%"></div></div></div>
+        <div class="skill-row"><span>AutoCAD 2D / 3D</span><div class="skill-bar"><div class="skill-bar-fill" style="width:92%"></div></div></div>
+        <div class="skill-row"><span>Revit BIM</span><div class="skill-bar"><div class="skill-bar-fill" style="width:85%"></div></div></div>
+        <div class="skill-row"><span>Enscape Rendering</span><div class="skill-bar"><div class="skill-bar-fill" style="width:82%"></div></div></div>
+        <div class="skill-row"><span>SketchUp / Rhino</span><div class="skill-bar"><div class="skill-bar-fill" style="width:80%"></div></div></div>
+        <div class="skill-row"><span>Cost Estimation</span><div class="skill-bar"><div class="skill-bar-fill" style="width:85%"></div></div></div>
+        <div class="location-badge"><div class="location-dot"></div>Ampara, Sri Lanka &mdash; Open to relocation</div>
       </div>
     </div>
   </div>
@@ -631,59 +226,17 @@
     <h2 class="section-title">The story<br><em>behind the work.</em></h2>
     <div class="about-grid">
       <div class="about-text fade-in">
-        <p>Growing up in Ampara, Sri Lanka, my path to the construction industry was anything but
-        conventional. After navigating real financial hardship and working in vocational trades,
-        I made a deliberate choice to invest in education — a decision that transformed my
-        trajectory entirely.</p>
-        <div class="about-highlight">
-          "Distinction in every course I have taken. Batch topper three times over."
-        </div>
-        <p>At BCAS Campus Kalmunai, I completed a Diploma in IT, a Draughtsman Diploma (CCDT),
-        and a Diploma in English — achieving Distinction and batch topper status in all three.
-        I am now completing my HND in Quantity Surveying under the Pearson program.</p>
-        <p>My goal is clear: to bring my technical expertise and relentless work ethic to the
-        construction industry in the UAE or Qatar, and build a career defined by excellence.</p>
+        <p>Growing up in Ampara, Sri Lanka, my path to the construction industry was anything but conventional. After navigating real financial hardship and working in vocational trades, I made a deliberate choice to invest in education — a decision that transformed my trajectory entirely.</p>
+        <div class="about-highlight">"Distinction in every course I have taken. Batch topper three times over."</div>
+        <p>At BCAS Campus Kalmunai, I completed a Diploma in IT, a Draughtsman Diploma (CCDT), and a Diploma in English — achieving Distinction and batch topper status in all three. I am now completing my HND in Quantity Surveying under the Pearson program.</p>
+        <p>My goal is clear: to bring my technical expertise and relentless work ethic to the construction industry in the UAE or Qatar, and build a career defined by excellence.</p>
       </div>
       <div class="timeline fade-in" style="transition-delay:0.15s">
-        <div class="timeline-item">
-          <div class="timeline-year">2026</div>
-          <div>
-            <div class="timeline-title">HND Quantity Surveying</div>
-            <div class="timeline-sub">BCAS Campus &mdash; Pearson Program</div>
-            <div class="timeline-badge">In Progress</div>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-year">2025</div>
-          <div>
-            <div class="timeline-title">Draughtsman Diploma (CCDT)</div>
-            <div class="timeline-sub">BCAS Campus Kalmunai</div>
-            <div class="timeline-badge">Distinction &bull; Batch Topper</div>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-year">2023</div>
-          <div>
-            <div class="timeline-title">Certificate in Information Technology</div>
-            <div class="timeline-sub">BCAS Campus &mdash; October 2023</div>
-            <div class="timeline-badge">Distinction &bull; Batch Topper</div>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-year">2023</div>
-          <div>
-            <div class="timeline-title">Diploma in English</div>
-            <div class="timeline-sub">BCAS Campus</div>
-            <div class="timeline-badge">Distinction &bull; Batch Topper</div>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-year">2022</div>
-          <div>
-            <div class="timeline-title">Enrolled at BCAS Campus</div>
-            <div class="timeline-sub">Turned hardship into opportunity</div>
-          </div>
-        </div>
+        <div class="timeline-item"><div class="timeline-year">2026</div><div><div class="timeline-title">HND Quantity Surveying</div><div class="timeline-sub">BCAS Campus — Pearson Program</div><div class="timeline-badge">In Progress</div></div></div>
+        <div class="timeline-item"><div class="timeline-year">2025</div><div><div class="timeline-title">Draughtsman Diploma (CCDT)</div><div class="timeline-sub">BCAS Campus Kalmunai</div><div class="timeline-badge">Distinction &bull; Batch Topper</div></div></div>
+        <div class="timeline-item"><div class="timeline-year">2023</div><div><div class="timeline-title">Certificate in Information Technology</div><div class="timeline-sub">BCAS Campus — October 2023</div><div class="timeline-badge">Distinction &bull; Batch Topper</div></div></div>
+        <div class="timeline-item"><div class="timeline-year">2023</div><div><div class="timeline-title">Diploma in English Language</div><div class="timeline-sub">BCAS Campus</div><div class="timeline-badge">Distinction &bull; Batch Topper</div></div></div>
+        <div class="timeline-item"><div class="timeline-year">2022</div><div><div class="timeline-title">Enrolled at BCAS Campus</div><div class="timeline-sub">Turned hardship into opportunity</div></div></div>
       </div>
     </div>
   </div>
@@ -697,63 +250,96 @@
     <div class="skills-grid">
       <div class="skill-card fade-in">
         <div class="skill-card-icon">&#9632;</div>
-        <div class="skill-card-title">CAD &amp; Drafting</div>
-        <div class="skill-tags">
-          <span class="skill-tag">AutoCAD 2D</span>
-          <span class="skill-tag">AutoCAD 3D</span>
-          <span class="skill-tag">AutoCAD MEP</span>
-          <span class="skill-tag">Construction Drawings</span>
-        </div>
+        <div class="skill-card-title">QS &amp; Estimation</div>
+        <div class="skill-tags"><span class="skill-tag">PlanSwift</span><span class="skill-tag">CostX</span><span class="skill-tag">BOQ Preparation</span><span class="skill-tag">Cost Estimation</span><span class="skill-tag">Tender Docs</span><span class="skill-tag">Excel (QS)</span></div>
       </div>
       <div class="skill-card fade-in" style="transition-delay:0.1s">
         <div class="skill-card-icon">&#9633;</div>
-        <div class="skill-card-title">BIM &amp; 3D Visualisation</div>
-        <div class="skill-tags">
-          <span class="skill-tag">Revit</span>
-          <span class="skill-tag">SketchUp</span>
-          <span class="skill-tag">Enscape</span>
-          <span class="skill-tag">3ds Max</span>
-        </div>
+        <div class="skill-card-title">CAD &amp; Drafting</div>
+        <div class="skill-tags"><span class="skill-tag">AutoCAD 2D</span><span class="skill-tag">AutoCAD 3D</span><span class="skill-tag">AutoCAD MEP</span><span class="skill-tag">Construction Drawings</span></div>
       </div>
       <div class="skill-card fade-in" style="transition-delay:0.2s">
         <div class="skill-card-icon">&#9651;</div>
-        <div class="skill-card-title">Quantity Surveying</div>
-        <div class="skill-tags">
-          <span class="skill-tag">Bill of Quantities</span>
-          <span class="skill-tag">Cost Estimation</span>
-          <span class="skill-tag">Tendering</span>
-          <span class="skill-tag">Procurement</span>
-        </div>
+        <div class="skill-card-title">BIM &amp; 3D Modelling</div>
+        <div class="skill-tags"><span class="skill-tag">Revit</span><span class="skill-tag">Rhino 3D</span><span class="skill-tag">SketchUp</span><span class="skill-tag">BIM Documentation</span></div>
       </div>
       <div class="skill-card fade-in">
         <div class="skill-card-icon">&#9671;</div>
-        <div class="skill-card-title">Construction Management</div>
-        <div class="skill-tags">
-          <span class="skill-tag">TDS Preparation</span>
-          <span class="skill-tag">Project Documentation</span>
-          <span class="skill-tag">Site Drawings</span>
-          <span class="skill-tag">Specifications</span>
-        </div>
+        <div class="skill-card-title">3D Visualisation</div>
+        <div class="skill-tags"><span class="skill-tag">Enscape</span><span class="skill-tag">Photorealistic Rendering</span><span class="skill-tag">Night Renders</span><span class="skill-tag">Walkthroughs</span></div>
       </div>
       <div class="skill-card fade-in" style="transition-delay:0.1s">
         <div class="skill-card-icon">&#9679;</div>
-        <div class="skill-card-title">Software &amp; Tools</div>
-        <div class="skill-tags">
-          <span class="skill-tag">Microsoft Office</span>
-          <span class="skill-tag">Excel (QS)</span>
-          <span class="skill-tag">PowerPoint</span>
-          <span class="skill-tag">IT Fundamentals</span>
-        </div>
+        <div class="skill-card-title">Project Management</div>
+        <div class="skill-tags"><span class="skill-tag">Primavera P6</span><span class="skill-tag">Microsoft Project</span><span class="skill-tag">Procore</span><span class="skill-tag">Cost Control</span></div>
       </div>
       <div class="skill-card fade-in" style="transition-delay:0.2s">
         <div class="skill-card-icon">&#9670;</div>
         <div class="skill-card-title">Languages</div>
+        <div class="skill-tags"><span class="skill-tag">English</span><span class="skill-tag">Tamil</span><span class="skill-tag">Sinhala</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROFESSIONAL STANDARDS -->
+<section id="standards">
+  <div class="section-inner">
+    <div class="section-eyebrow">Methodology</div>
+    <h2 class="section-title">Professional standards<br><em>I work to.</em></h2>
+    <div class="standards-grid">
+      <div class="standard-card fade-in">
+        <div class="standard-code">NRM 2</div>
+        <div class="standard-name">New Rules of Measurement — RICS</div>
+        <div class="standard-desc">Detailed measurement of building works for the purpose of preparing bills of quantities and quantified schedules of works. Applied in BOQ preparation, cost planning, and tender documentation for residential and commercial projects.</div>
+      </div>
+      <div class="standard-card fade-in" style="transition-delay:0.15s">
+        <div class="standard-code">POMI</div>
+        <div class="standard-name">Principles of Measurement International</div>
+        <div class="standard-desc">International standard for the measurement of building and civil engineering works, widely adopted across Middle East construction projects. Applied in quantity take-offs and cost estimation for cross-border project environments.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- PROFESSIONAL STANDARDS -->
+<section id="standards" style="background:var(--bg2);">
+  <div class="section-inner" style="padding-top:0;padding-bottom:5rem;">
+    <div class="section-eyebrow">QS Standards</div>
+    <h2 class="section-title">Measurement<br><em>Standards.</em></h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:3rem;">
+
+      <div class="skill-card fade-in">
+        <div class="skill-card-icon">&#9632;</div>
+        <div class="skill-card-title">NRM 2</div>
+        <p style="font-size:0.85rem;color:var(--text-muted);line-height:1.8;margin-bottom:0.8rem;">
+          RICS New Rules of Measurement — Detailed Measurement for Building Works.
+          Applied for preparing Bills of Quantities, tender pricing documents,
+          and cost plans for building construction projects.
+        </p>
         <div class="skill-tags">
-          <span class="skill-tag">English</span>
-          <span class="skill-tag">Tamil</span>
-          <span class="skill-tag">Sinhala</span>
+          <span class="skill-tag">BOQ Preparation</span>
+          <span class="skill-tag">Tender Pricing</span>
+          <span class="skill-tag">Building Works</span>
         </div>
       </div>
+
+      <div class="skill-card fade-in" style="transition-delay:0.1s">
+        <div class="skill-card-icon">&#9633;</div>
+        <div class="skill-card-title">POMI</div>
+        <p style="font-size:0.85rem;color:var(--text-muted);line-height:1.8;margin-bottom:0.8rem;">
+          Principles of Measurement International — used for measuring civil engineering
+          and building works on international projects, particularly relevant for
+          Middle East construction environments.
+        </p>
+        <div class="skill-tags">
+          <span class="skill-tag">Civil Engineering</span>
+          <span class="skill-tag">International Projects</span>
+          <span class="skill-tag">Measurement Rules</span>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -763,7 +349,6 @@
   <div class="section-inner">
     <div class="section-eyebrow">Portfolio</div>
     <h2 class="section-title">Selected<br><em>projects.</em></h2>
-
     <div class="projects-list">
 
       <!-- PROJECT 1: REVIT -->
@@ -777,21 +362,8 @@
             <div class="project-meta-item"><span>Date</span>January 2025</div>
             <div class="project-meta-item"><span>Scale</span>1:90 / 1:75</div>
           </div>
-          <p class="project-desc">
-            A fully modelled 3-bedroom, 2-storey residential building produced in Autodesk Revit
-            as the CCDT final assignment. The project includes full architectural floor plans for
-            ground and first floors, North/South/East/West elevations, sectional drawings, door
-            and window schedules, and photorealistic interior and exterior renders produced with
-            Enscape — including dramatic night-time lighting scenes.
-          </p>
-          <div class="project-tags">
-            <span class="project-tag">Revit</span>
-            <span class="project-tag">Enscape</span>
-            <span class="project-tag">BIM</span>
-            <span class="project-tag">Floor Plans</span>
-            <span class="project-tag">Elevations</span>
-            <span class="project-tag">3D Rendering</span>
-          </div>
+          <p class="project-desc">A fully modelled 3-bedroom, 2-storey residential building produced in Autodesk Revit as the CCDT final assignment. Includes full architectural floor plans, elevations, sections, door and window schedules, and photorealistic interior and exterior renders produced with Enscape — including dramatic night-time lighting scenes.</p>
+          <div class="project-tags"><span class="project-tag">Revit</span><span class="project-tag">Enscape</span><span class="project-tag">BIM</span><span class="project-tag">Floor Plans</span><span class="project-tag">Elevations</span><span class="project-tag">3D Rendering</span></div>
           <div class="project-actions">
             <a href="revit-building-pdf.pdf" class="btn-pdf" target="_blank">&#8595; View Full PDF</a>
             <a href="https://www.youtube.com/watch?v=OifNrmpIasQ" class="btn-ghost" target="_blank">&#9654; Watch Render Video</a>
@@ -799,14 +371,7 @@
         </div>
         <div class="project-media">
           <div class="media-label">Enscape render walkthrough</div>
-          <div class="media-video">
-            <iframe src="https://www.youtube.com/embed/OifNrmpIasQ" allowfullscreen loading="lazy"></iframe>
-          </div>
-          <div class="media-label">Exterior renders &mdash; day &amp; night</div>
-          <div class="media-grid-2">
-            <img src="revit-exterior-day.jpg" alt="Revit exterior day render" onerror="this.style.display='none'">
-            <img src="revit-exterior-night.jpg" alt="Revit exterior night render" onerror="this.style.display='none'">
-          </div>
+          <div class="media-video"><iframe src="https://www.youtube.com/embed/OifNrmpIasQ" allowfullscreen loading="lazy"></iframe></div>
         </div>
       </div>
 
@@ -820,19 +385,8 @@
             <div class="project-meta-item"><span>Type</span>Mixed-Use</div>
             <div class="project-meta-item"><span>Floors</span>Two Storeys</div>
           </div>
-          <p class="project-desc">
-            A mixed-use two-storey building designed in SketchUp featuring a commercial ground floor
-            and residential upper floor. The model demonstrates spatial planning, facade design,
-            structural massing, and presentation-quality 3D visualisation — showcasing the ability
-            to communicate design intent clearly to clients and stakeholders.
-          </p>
-          <div class="project-tags">
-            <span class="project-tag">SketchUp</span>
-            <span class="project-tag">3D Modelling</span>
-            <span class="project-tag">Mixed-Use</span>
-            <span class="project-tag">Residential</span>
-            <span class="project-tag">Commercial</span>
-          </div>
+          <p class="project-desc">A mixed-use two-storey building designed in SketchUp featuring a commercial ground floor and residential upper floor. Demonstrates spatial planning, facade design, structural massing, and presentation-quality 3D visualisation — showcasing the ability to communicate design intent clearly to clients and stakeholders.</p>
+          <div class="project-tags"><span class="project-tag">SketchUp</span><span class="project-tag">3D Modelling</span><span class="project-tag">Mixed-Use</span><span class="project-tag">Residential</span><span class="project-tag">Commercial</span></div>
           <div class="project-actions">
             <a href="https://drive.google.com/file/d/1Kaze7e-gpdjo0tH9inUdymi229c-9ob2/view?usp=sharing" class="btn-pdf" target="_blank">&#8595; View Full PDF</a>
             <a href="https://www.youtube.com/watch?v=Lo8Ev2BTYH8" class="btn-ghost" target="_blank">&#9654; Watch Model Video</a>
@@ -840,42 +394,57 @@
         </div>
         <div class="project-media">
           <div class="media-label">SketchUp model walkthrough</div>
-          <div class="media-video">
-            <iframe src="https://www.youtube.com/embed/Lo8Ev2BTYH8" allowfullscreen loading="lazy"></iframe>
+          <div class="media-video"><iframe src="https://www.youtube.com/embed/Lo8Ev2BTYH8" allowfullscreen loading="lazy"></iframe></div>
+        </div>
+      </div>
+
+      <!-- PROJECT 3: RHINO RING -->
+      <div class="project-block fade-in">
+        <div>
+          <div class="project-num">03 &mdash; Rhino 3D</div>
+          <h3 class="project-title">Diamond Halo Ring &mdash; Jewellery 3D Model</h3>
+          <div class="project-meta">
+            <div class="project-meta-item"><span>Software</span>Rhino 3D</div>
+            <div class="project-meta-item"><span>Type</span>Product Visualisation</div>
+            <div class="project-meta-item"><span>Focus</span>Precision Modelling</div>
+          </div>
+          <p class="project-desc">A high-precision diamond halo engagement ring modelled in Rhino 3D, demonstrating advanced surface modelling, complex geometry, and photorealistic material rendering. The project showcases attention to fine detail — from the micro-pavé diamond band to the four-prong centre stone setting — with multiple camera angles and studio-quality lighting compositions.</p>
+          <div class="project-tags"><span class="project-tag">Rhino 3D</span><span class="project-tag">Surface Modelling</span><span class="project-tag">Product Render</span><span class="project-tag">Precision Detail</span><span class="project-tag">Visualisation</span></div>
+          <div class="project-actions">
+            <a href="https://youtu.be/E_dJgzGytTs" class="btn-ghost" target="_blank">&#9654; Watch Render Video</a>
+          </div>
+        </div>
+        <div class="project-media">
+          <div class="media-label">Render walkthrough</div>
+          <div class="media-video"><iframe src="https://www.youtube.com/embed/E_dJgzGytTs" allowfullscreen loading="lazy"></iframe></div>
+          <div class="media-label" style="margin-top:0.5rem">Rendered stills</div>
+          <div class="media-grid-3">
+            <img src="rhino-ring-1.png" alt="Diamond ring side view render">
+            <img src="rhino-ring-2.png" alt="Diamond ring top view render">
+            <img src="rhino-ring-3.png" alt="Diamond ring back view render">
           </div>
         </div>
       </div>
 
-      <!-- PROJECT 3: CDP -->
-      <div class="project-block fade-in">
+      <!-- PROJECT 4: CDP -->
+      <div class="project-block reverse fade-in">
         <div>
-          <div class="project-num">03 &mdash; Quantity Surveying</div>
+          <div class="project-num">04 &mdash; Quantity Surveying</div>
           <h3 class="project-title">Sunrise Apartments &mdash; Affordable Housing CDP</h3>
           <div class="project-meta">
             <div class="project-meta-item"><span>Client</span>Sunrise Property Developers</div>
             <div class="project-meta-item"><span>Location</span>Kalmunai, Sri Lanka</div>
-            <div class="project-meta-item"><span>Type</span>Two-Storey Apartment</div>
+            <div class="project-meta-item"><span>Standard</span>NRM 2 / POMI</div>
           </div>
-          <p class="project-desc">
-            A comprehensive Construction Design Project covering a two-storey affordable apartment
-            building. Deliverables include full architectural drawings produced in AutoCAD,
-            a complete Bill of Quantities, Technical Data Sheets, and a 22-slide presentation
-            deck mapping all work to HND learning outcomes LO1–LO4.
-          </p>
-          <div class="project-tags">
-            <span class="project-tag">AutoCAD</span>
-            <span class="project-tag">Bill of Quantities</span>
-            <span class="project-tag">TDS</span>
-            <span class="project-tag">HND QS</span>
-            <span class="project-tag">Construction Drawings</span>
-          </div>
+          <p class="project-desc">A comprehensive Construction Design Project covering a two-storey affordable apartment building. Deliverables include full architectural drawings in AutoCAD, a complete Bill of Quantities measured to NRM 2 standards, Technical Data Sheets, and a 22-slide presentation deck mapping all work to HND learning outcomes LO1–LO4.</p>
+          <div class="project-tags"><span class="project-tag">AutoCAD</span><span class="project-tag">Bill of Quantities</span><span class="project-tag">NRM 2</span><span class="project-tag">TDS</span><span class="project-tag">HND QS</span></div>
         </div>
         <div class="project-media">
           <div class="pdf-preview">
-            <div class="pdf-icon">&#128196;</div>
-            <div class="pdf-title">Sunrise CDP &mdash; Full Project Documentation</div>
-            <div class="pdf-sub">AutoCAD drawings &bull; BOQ &bull; TDS &bull; Presentation</div>
-            <div class="pdf-sub" style="color:var(--text-dim);font-size:0.72rem;margin-top:0.3rem">Add your CDP PDF to the GitHub folder to enable download here</div>
+            <div style="font-size:2rem;color:var(--gold)">&#128196;</div>
+            <div style="font-size:0.9rem;font-weight:500;color:var(--text)">Sunrise CDP — Full Project Documentation</div>
+            <div style="font-size:0.78rem;color:var(--text-dim)">AutoCAD drawings &bull; BOQ &bull; TDS &bull; Presentation</div>
+            <div style="font-size:0.72rem;color:var(--text-dim);margin-top:0.3rem">Upload CDP PDF to GitHub to enable download here</div>
           </div>
         </div>
       </div>
@@ -891,53 +460,16 @@
     <h2 class="section-title">Open to <em>new opportunities.</em></h2>
     <div class="contact-grid">
       <div class="fade-in">
-        <p class="contact-intro">
-          I am actively seeking junior Quantity Surveyor or CAD Draughtsman roles —
-          particularly in the UAE and Qatar construction sectors.
-          I am also available for remote part-time drafting or QS work. Feel free to reach out.
-        </p>
-        <div class="contact-item">
-          <div class="contact-icon">&#9679;</div>
-          <div>
-            <div class="contact-label">Location</div>
-            <div class="contact-value">Ampara, Sri Lanka &mdash; Open to relocation (UAE / Qatar)</div>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon">&#9632;</div>
-          <div>
-            <div class="contact-label">Availability</div>
-            <div class="contact-value">Available from late 2026 (post internship)</div>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon">&#9651;</div>
-          <div>
-            <div class="contact-label">Role Interest</div>
-            <div class="contact-value">Junior QS &bull; CAD Draughtsman &bull; Remote Drafting</div>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-icon">&#9671;</div>
-          <div>
-            <div class="contact-label">Registration</div>
-            <div class="contact-value">Reg. No. 1027986 &mdash; BCAS Campus Kalmunai</div>
-          </div>
-        </div>
+        <p class="contact-intro">I am actively seeking junior Quantity Surveyor or CAD Draughtsman roles — particularly in the UAE and Qatar construction sectors. I am also available for remote part-time drafting or QS work. Feel free to reach out.</p>
+        <div class="contact-item"><div class="contact-icon">&#9679;</div><div><div class="contact-label">Location</div><div class="contact-value">Ampara, Sri Lanka — Open to relocation (UAE / Qatar)</div></div></div>
+        <div class="contact-item"><div class="contact-icon">&#9632;</div><div><div class="contact-label">Email</div><div class="contact-value">athrara3@gmail.com</div></div></div>
+        <div class="contact-item"><div class="contact-icon">&#9651;</div><div><div class="contact-label">Availability</div><div class="contact-value">Available from late 2026 (post internship)</div></div></div>
+        <div class="contact-item"><div class="contact-icon">&#9671;</div><div><div class="contact-label">Role Interest</div><div class="contact-value">Junior QS &bull; CAD Draughtsman &bull; Remote Drafting</div></div></div>
       </div>
       <div class="contact-form fade-in" style="transition-delay:0.15s">
-        <div class="form-group">
-          <label class="form-label">Your Name</label>
-          <input type="text" class="form-input" placeholder="John Smith">
-        </div>
-        <div class="form-group">
-          <label class="form-label">Email Address</label>
-          <input type="email" class="form-input" placeholder="john@company.com">
-        </div>
-        <div class="form-group">
-          <label class="form-label">Message</label>
-          <textarea class="form-textarea" placeholder="Tell me about the opportunity..."></textarea>
-        </div>
+        <div class="form-group"><label class="form-label">Your Name</label><input type="text" class="form-input" placeholder="John Smith"></div>
+        <div class="form-group"><label class="form-label">Email Address</label><input type="email" class="form-input" placeholder="john@company.com"></div>
+        <div class="form-group"><label class="form-label">Message</label><textarea class="form-textarea" placeholder="Tell me about the opportunity..."></textarea></div>
         <button class="form-btn">Send Message &rarr;</button>
       </div>
     </div>
@@ -952,9 +484,7 @@
 
 <script>
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
-    });
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
   }, { threshold: 0.1 });
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 </script>
